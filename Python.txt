@@ -1,0 +1,2979 @@
+Ways of python execution:
+
+1. IDLE   
+2. IDE             -----> (pycharm)
+3. script files
+4. jupyterNotebook
+
+py filename.py :: cmd
+
+------------------
+python version:  python --version
+---------------
+take input:   input()---> accept input in string format.
+string ----> int
+a=input("Enter a value")
+b=int(a)
+c=float(b)
+a=90
+s=str(a)
+======================================================
++ / * - // %   **
+ 
+diff b/w / // %
+=====================
+
+comments: 
+
+single line   #
+multiline comments  ''' sfksdkfdshkf '''
+--------------------------------------------------------
+diff between   ' ' vs " "  vs """ """
+
+=======================================
+
+relational operators:
+
+<  <=  > >= == != 
+
+Assignment operators:
+
+=
+
+compound assignment operators:
+
+a+=12    a=a+12
+a-=12
+a*=12
+a/=12
+a%=12
+
+
+======================
+logical operators:
+
+1. and 
+2. or 
+3. not
+=======================================================
+#1.  accept number from user and ckeck is +ve or -ve or zero.
+
+num=int(input("Enter value "))
+if num>0:
+    print(num," is +ve number")
+elif num<0:
+    print(num," is -ve number")
+else:
+    print("Zero")
+--------------------------------------------------------
+2. WAP to accept marks and print pass/fail
+3. WAP to accept age from user and print he/she is eligible for voting
+4. WAP to accept number  and check it is even or odd.
+#5. accept number from user and ckeck is +ve or -ve or zero.
+
+num=int(input("Enter value "))
+if num%2==0:
+    print(num," is Even number")
+else:
+    print(num," is Odd number")
+======================================================================
+6. WAP to accept marks and check marks are valid or invalid.
+ 0-100  --valid marks
+ marks>=0 and marks<=100
+
+marks=int(input("Enter marks to check valid or invalid"))
+if marks>=0 and marks<=100:
+    print(marks," are valid")
+else:
+    print(marks," are invalid")
+=======================================================================
+7. WAP to accept 3 number and print big number
+num1=int(input("Enter num1"))
+num2=int(input("Enter num2"))
+num3=int(input("Enter num3"))
+if num1>num2 and num1>num3:
+    print(num1," is big")
+elif num2>num1 and num2>num3:
+    print(num2," is big")
+else:
+    print(num3," is big")
+==========================================================================
+8. WAP to accept salary from user and find tax amount.
+
+salary <=5000    5% tax
+salary between 5000-10000   8%tax
+salary >10000   13% tax
+
+'''6. WAP to accept salary from user and find tax amount.
+salary <=5000    5% tax
+salary between 5000-10000   8%tax
+salary >10000   13% tax'''
+tax=0;
+salary=float(input("Enter salary to find tax amount"))
+if salary<=5000:
+    tax=(salary/100)*5;
+elif salary<=10000:
+    tax=(salary/100)*8;
+else:
+    tax=(salary/100)*13;
+
+print("Tax amount : ",tax);
+======================================================================
+9. WAP to accept basic salary and find gross salary.
+   gs=bs+hra+da;
+
+if bs<=5000   hra is 8%  and da is 13% on bs;
+if bs b/w 5000---10000  hra is 12% and da is 18%
+if bs>10000  hra is 17% and da is 23%
+=====================================================================
+10. WAP to accept week number and print weekday.
+1--sunday  2--monday   ---------7.saturday    others: error
+if  num==1
+    print("sunday")
+
+elif num==2:
+    print(
+
+elif
+
+
+else
+
+========================================================================
+11. WAP to accept 3 subject marks.(50)
+ ==> print pass if student got passed in all subjects.
+ ==> and find avg and print grade.  90+  A  70--90  B  50--70  C
+==> print fail if student got fail in any one subject.
+==> and print failed subject name along with score.
+
+s1=int(input("Enter s1 marks"))
+s2=int(input("Enter s2 marks"))
+s3=int(input("Enter s3 marks"))
+avg=0
+if s1>=50 and s2>=50 and s3>=50:
+    avg=(s1+s2+s3)/3;
+    print("Average score is : ",avg)
+    if avg>=90:
+        print("Student got A grade")
+    elif avg>=70:
+        print("student got B grade")
+    else:
+        print("Student got C grade")
+else:
+    if s1<50:
+        print("s1 got fail and score is :",s1)
+    if s2<50:
+        print("s2 got fail and score is :", s2)
+    if s3<50:
+        print("s3 got fail and score is :", s3)
+
+==========================================================================
+  
+=======================================================================
+"""13. WAP to accept prev and pres units and print number of units.
+and genarate bill based on following conditions:
+    1. first 50 units charges: 0.50/unit
+    2. next 100 units charges: 0.75/unit
+    3. next 100 units charges: 1.25/unit
+    4. above 250 units charges: 1.50
+                    add  5%  GST to total bill.  """
+units=0;bill=0;gst=0;
+prev=int(input("Enter prev units"))
+pres=int(input("Enter pres units"))
+if pres>prev:
+    units=pres-prev;
+    print("Total units: ",units)
+    if units<=50:
+        bill=units*0.50;
+    elif units<=150:
+        bill = (50*0.50)+(units-50)*0.75;
+    elif units<=250:
+        bill = (50*0.50)+(100*0.75)+(units-150)*1.25;
+    else:
+        bill = (50*0.50)+(100*0.75)+(100*1.25)+(units-250)*1.50;
+    gst = (bill / 100) * 5
+    bill = bill + gst;
+    print("GST amount", gst)
+    print("Final bill: ", bill)
+else:
+    print("Invalid units")
+==========================================================
+# 14. ATM  2000 500 100
+a=0;b=0;c=0;
+amount=int(input("Enter amount"));
+if amount%100==0:
+    if amount>=2000:
+        a=amount//2000;
+        amount=amount-(a*2000);
+        print("2000 rupees notes are ",a)
+    if amount>=500:
+        b=amount//500;
+        amount=amount-(b*500)
+        print("500 rupees notes are ",b)
+    if amount>=100:
+        c=amount//100
+        print("100 rupees notes are ",c);
+else:
+    print("Amount should be multiples of 100 only")
+=========================================================
+# 1-10 numbers
+for i in range(10):
+    print(i,end=" ")
+=====================================================
+# 1-10 numbers
+for i in range(5,50):
+    print(i,end=" ")
+===================================================
+# 1-10 numbers
+for i in range(50,5,-1):
+    print(i,end=" ")
+===============================
+# 1-10 numbers
+n=int(input("Enter n value"))
+for i in range(1,n):
+    print(i,end=" ")==========================
+============================================================
+# 1-10 numbers
+n=int(input("Enter n value"))
+for i in range(1,n):
+    if i%2==0:
+        print(i,end=" ")
+=========================================================
+# 1-10 numbers
+n=int(input("Enter n value"))
+for i in range(1,n,2):
+    print(i,end=" ")
+==========================================================
+start=int(input("Enter start value"))
+end=int(input("Enter end value"))
+for i in range(start,end):
+    print(i,end=" ")
+
+==================================================
+start=int(input("Enter start value"))
+end=int(input("Enter end value"))
+if start<end:
+    for i in range(start,end):
+        print(i,end=" ")
+elif start>end:
+    for i in range(start,end,-1):
+        print(i,end=" ")
+else:
+    print("Start and end values are same")
+
+==========================================================
+# table of a given  number
+num=int(input("Enter number to print table"))
+for i in range(1,11):
+    print(num," * ",i," = ",num*i)
+===========================================================
+WAP to print sum of even numbers between 1-n
+WAP to print sum of 1-n numbers
+WAP to find factors of a given number
+WAP to print factorial of a given number.
+====================================================
+# WAP to find factors and print number of factors of a given number
+count=0
+n=int(input("Enter n value"))
+for i in range(1,(n//2)+1):
+    if n%i==0:
+        count=count+1
+        print(i,end=" ")
+print(" \n Number of factors: ",count)
+========================================================
+# WAP to find factors and print number of factors, sum of factors of a given number
+count=0;sum=0;
+n=int(input("Enter n value"))
+for i in range(1,(n//2)+1):
+    if n%i==0:
+        sum=sum+i;
+        count=count+1
+        print(i,end=" ")
+print(" \n Number of factors: ",count)
+print(" \n Sum of factors: ",sum)
+=======================================================
+1. WAP to check given number is prime number or not
+2. WAP to check given number is perfect number or not
+
+# WAP to find factors and print number of factors, sum of factors of a given number
+count=0;
+n=int(input("Enter n value"))
+for i in range(1,(n//2)+1):
+    if n%i==0:
+        count=count+1
+if count==1:
+    print(n," is prime number")
+else:
+    print(n,"not a prime ")
+
+========================================================
+# WAP to find factors and print number of factors, sum of factors of a given number
+sum=0;
+n=int(input("Enter n value"))
+for i in range(1,(n//2)+1):
+    if n%i==0:
+        sum=sum+i
+if sum==n:
+    print(n," is perfect number")
+else:
+    print(n,"not a perfect number ")
+
+
+=======================================================
+n=int(input("Enter n value"))
+for i in range(1,n+1):
+    for j in range(1,11):
+        print(i*j,end=" ")
+
+    print("\n")
+
+1. WAP to print 1-n prime numbers
+2. WAP to print 1-n perfect numbers
+=====================================================
+list=[12,45,89,34,56,78,12,34.8,"hai"]
+print(list)
+============================================
+list=[12,45,89,34,56,78,12]
+print(list)
+print(list[3])
+print(list[2:5])
+print(list[:3])
+print(list[1:])
+print(list[:])
+print(list[-2])
+print(list[-5:-1])
+print(list[-5:])
+print(list[-1:0])
+print(list[::-1])
+print(list[::-2])
+================================================
+list=[12,45,89,34,56,78,12]
+for i in list:
+    if i%2==0:
+        print(i,end=" ")
+===================================================
+max=0;
+list=[12,45,89,34,56,78,12]
+for i in list:
+    if max<i:
+        max=i
+print("max :",max)
+==================================================
+max=0;sum=0;count=0;
+list=[12,45,89,8,56,78,12]
+min=list[0]
+for i in list:
+    sum=sum+i
+    count=count+1
+    if max<i:
+        max=i
+    if min>i:
+        min=i
+print("max :",max)
+print("Sum : ",sum)
+print("count : ",count)
+print("avg :",sum//count)
+print("Min : ",min)
+================================================
+list=[12,45,89,8,56,78,12]
+print("min: ",min(list))
+print("Max: ",max(list))
+print("count: ",len(list))
+print("Sum: ",sum(list))
+=================================================
+list=[12,45,89,8,56,78,12]
+print(list)
+list.remove(45)
+print(list)
+list.pop()
+print(list)
+list.pop(3)
+print(list)
+list.clear()
+print(list)
+
+===================================================
+list=[12,45,89]
+print(list)
+list.append(90)
+list.append(19)
+list.append(33)
+print(list)
+list.insert(2,11)
+print(list)
+list[3]=22
+print(list)
+
+==========================================================
+list1=[12,45,89]
+list2=[1,2,3,4]
+print(list1)
+list1.append(list2)
+print(list1)
+list1.append(10)
+print(list1)
+
+print(list1[3])
+print(list1[4])
+
+print(list1[3][2])
+
+=========================================================
+list1=[12,45,89]
+list2=[1,2,3,4]
+print(list1)
+list1.extend(list2)
+print(list1)
+list1.append(10)
+print(list1)
+=====================================================
+append()
+insert()
+extend()
+remove()
+clear()
+pop()
+pop(index)
+copy()
+
+list2=list1.copy()
+===================================================
+WAP to accept n values and add to list and accept search element and find frequency of search element;
+=====================================================
+list=[]
+search=0;count=0
+n=int(input("Enter n value"))
+for i  in range(n):
+    list.append(int(input("Enter a value")))
+print(list)
+search=int(input("Enter search element"))
+for i in list:
+    if search==i:
+        count=count+1
+print(search, "frequency is : ",count)
+======================================================
+WAP to accept n values and search element, print search element is avaiable or not.
+
+WAP to accept n values and search element, print search element is avaiable or not. if avaaible print index positions.
+
+WAP to accept n values and print duplicate values
+#WAP to accept n values and print duplicate values
+list=[]
+count=0
+n=int(input("Enter n value"))
+for i in range(n):
+    list.append(int(input("Enter value")))
+for i in list:
+    for j in range(n):
+        if i==list[j]:
+            count+=1
+            list[j]=None
+    if count>1 and i!=None:
+        print(i,end=" ")
+    count=0
+=====================================
+list=[]
+count=0
+n=int(input("Enter n value"))
+for i in range(n):
+    list.append(int(input("Enter value")))
+for i in list:
+    for j in range(n):
+        if i==list[j]:
+            count+=1
+            list[j]=None
+    if  count>1 and i!=None:
+        print(i,end=" ")
+    count=0
+
+=====================================
+list=[]
+count=0
+n=int(input("Enter n value"))
+for i in range(n):
+    list.append(int(input("Enter value")))
+for i in list:
+    for j in range(n):
+        if i==list[j]:
+            count+=1
+            list[j]=None
+    if  i!=None:
+        print(i,"frequency : ",count)
+    count=0
+
+=========================================
+WAP to accept n values and print frequency of each element in a list
+
+========================================================================
+str="hai hello niit"
+print(str)
+print(str[4])
+print(str[2:6])
+print(len(str))
+===========================
+str="hai hello niit"
+count=0
+print(len(str))
+for i in str:
+    if i!=' ':
+        count=count+1
+print(count)
+================================
+str="hai hello niit"
+print(str)
+print(str.upper())
+print(str.lower())
+print(str.title())
+print(str.capitalize())
+
+=================================
+str1="hai hello"
+str2="HAI HELLO"
+str3="Hai"
+print(str1.islower())
+print(str1.isupper())
+print(str1.istitle())
+print(str2.islower()) #f
+print(str2.isupper()) #t
+print(str2.istitle()) #f
+print(str3.islower()) #f
+print(str3.isupper()) # f
+print(str3.istitle())  # t
+
+
+str.isTitle()
+
+======================================
+str="hai hello niit"
+words=str.split(" ")
+print(words)
+print(len(words))
+===================================
+str="hai"
+str1=" hai"
+str2="hai12"
+print(str.isalpha())
+print(str1.isalpha())
+print(str2.isalpha())
+===================================
+str="hai"
+str1="123"
+str2="hai12"
+str3="hai hello"
+print(str.isalnum())
+print(str1.isalnum())
+print(str2.isalnum())
+print(str3.isalnum())
+===================================
+str="hai"
+str1="123"
+str2="hai12"
+str3="hai hello"
+print(str.isdigit())
+print(str1.isdigit())
+print(str2.isdigit())
+print(str3.isdigit())
+====================================
+str=" "
+str1="hai "
+print(str.isspace())
+print(str1.isspace())
+===================================
+isalpha() :  supports only alphabets
+isalnum() :  supports both alphabet and numerics only
+isdigit() : supports digits
+isspace() : supports space
+======================
+WAP to accept string and print number of digits,no of alphabets and no.of special characters.
+
+str=input("Enter string")
+acount=0;dcount=0;scount=0
+for i in str:
+    if i.isalpha():
+        acount=acount+1
+    elif i.isdigit():
+        dcount=dcount+1
+    else:
+        scount=scount+1
+print("Number of alphabets: ",acount)
+print("Number of digits: ",dcount)
+print("Number of special char: ",scount)
+===================================================
+WAP to accept string and print number of vowels
+
+str=input("Enter string")
+acount=0;dcount=0;scount=0
+for i in str:
+    if i.isalpha():
+        acount=acount+1
+    elif i.isdigit():
+        dcount=dcount+1
+    else:
+        scount=scount+1
+print("Number of alphabets: ",acount)
+print("Number of digits: ",dcount)
+print("Number of special char: ",scount)
+======================================
+#WAP to accept string and find number of words, and print frequency of each word.
+str=input("Enter string")
+words=str.split(" ")
+count=0
+print("Number of words: ",len(words))
+for word in words:
+    for j in range(len(words)):
+        if word==words[j]:
+            count=count+1
+            words[j]='null'
+    if word!='null':
+        print(word+" frequency is : ",count)
+    count=0;
+==========================================================================
+#WAP to accept n values and print frequency of each element in a list
+list=[]
+count=0
+n=int(input("Enter n value"))
+for i in range(n):
+    list.append(int(input("Enter value")))
+
+for i in list:                     #[23 45 67 89 0 56,0,89 0]
+    for j in range(len(list)):
+        if i==list[j]:
+            count=count+1
+            list[j]=0
+    if i!=0:
+        print(i,"count: ",count)
+    count=0
+
+============================================================
+#WAP to accept n values and print all elements whose frequency is >=3;
+
+#WAP to accept n values and print duplicate values
+list=[]
+count=0
+n=int(input("Enter n value"))
+for i in range(n):
+    list.append(int(input("Enter value")))
+
+for i in list:                     #[23 45 67 89 0 56,0,89 0]
+    for j in range(len(list)):
+        if i==list[j]:
+            count=count+1
+            list[j]=0
+    if i!=0 and count>1:
+        print(i,"count: ",count)
+    count=0
+========================================================================
+count=0
+str=input("Enter string")  # hai hello niit
+words=str.split(" ")
+for word in words:
+    for i in range(len(words)):
+        if word==words[i]:
+            count=count+1
+            words[i]="null"
+    if word!='null':
+        print(word," count : ",count)
+    count=0
+=======================================================================
+str1=" hai"
+str2=" hai "
+str3="hai"
+str4="hai hello "
+print("str1 : ",len(str1))
+print("str2 : ",len(str2))
+print("str3 : ",len(str3))
+print("str4 : ",len(str4))
+print("str1 : ",len(str1.lstrip()))
+print("str2 : ",len(str2.strip()))
+print("str3 : ",len(str3.rstrip()))
+print("str4 : ",len(str4))
+
+
+================================================================================
+#1-10
+
+i=1;
+while i<=10:
+    print(i)
+    i=i+1
+
+==========================================================================
+#accept number and print number of digits:
+count=0
+num=int(input("Enter number"))  #8456
+while num!=0:
+    num=num//10;
+    count=count+1
+print("Number of digits: ",count)
+=============================================================================
+#accept number and print number of digits:
+count=0
+rem=0
+sum=0
+num=int(input("Enter number"))  #8456
+while num!=0:
+    rem=num%10;
+    sum=sum+rem;
+    num=num//10;
+    count=count+1
+print("Number of digits: ",count)
+print("Sum of digits : ",sum)
+===========================================================================
+1. WAP to accept number and print sum of even  digits and sum of odd digits
+#accept number and print number of digits:
+count=0
+rem=0
+esum=0;osum=0;
+num=int(input("Enter number"))  #8456
+while num!=0:
+    rem=num%10;
+    if rem%2==0:
+        esum=esum+rem;
+    else:
+        osum=osum+rem
+    num=num//10;
+    count=count+1
+
+print("Even digits Sum of digits : ",esum)
+print("Odd digits Sum of digits : ",osum)
+======================================================================
+#accept number and print number of digits:
+count=0
+rem=0
+num=int(input("Enter number"))  #8456
+while num!=0:
+    rem=num%10;
+    if rem%2==0:
+      print(rem)
+    num=num//10;
+    count=count+1
+=========================================================================
+#print reverse of a given number
+rem=0;reverse=0
+num=int(input("Enter number"))  #8456
+while num!=0:
+    rem=num%10;
+    reverse=reverse*10+rem;
+    num=num//10;
+print("Reverse number: ",reverse)
+=======================================================================
+wap to check the given  number is palindrom number or not. on string
+WAP to check given number is armstrong number or not
+WAP to check given number is strong number or not
+
+rem=0;reverse=0;temp=0
+num=int(input("Enter number"))  #8456
+temp=num;
+while num!=0:
+    rem=num%10;
+    reverse=reverse*10+rem;
+    num=num//10;
+if temp==reverse:
+    print("Palindrom")
+else:
+    print("Not a palindrom")
+
+=======================================================================
+#WAP to check given number is armstrong number or no
+import math
+count=0;temp1=0;rem=0;temp2=0;sum=0;
+num=int(input("Enter number")) #153
+temp1=num;
+temp2=num;
+while num!=0:
+    count=count+1
+    num=num//10;
+while temp1!=0:
+    rem=temp1%10;
+    sum=sum+math.pow(rem,count)
+    temp1=temp1//10
+if temp2==sum:
+    print("armsrong number")
+else:
+    print("Not a armstrong number")
+
+==========================================================================
+Count digits in a number
+Find out how many times a particular digit occurs in a number
+Display the Fibonacci series up to a max limit
+Display first n numbers of a Fibonacci series
+Calculate the factorial of a number n 
+A program that generates all prime numbers between x and y
+
+
+
+0 1 1 2 3 5 8 13....
+
+Generate the first 10 even numbers
+Input a number and check if it is prime or not
+Input 10 numbers and display the smallest and largest of them
+Input 10 numbers and display the sum and average. 
+	Explore the internet and find out how to display a floating number to required decimal places.
+Input a number and calculate its factorial
+
+=================================================================================
+
+if 
+
+if else
+nested if 
+elif
+
+for with range()
+for with string
+for with list
+for with tuple
+
+
+inner for loop
+
+*
+* * 
+* * *
+* * * *
+* * * * *
+
+
+
+i     j
+0     0 1 2 3 4 5
+1     0 1 2 3 4 5
+2     0 1 2 3 4 5
+3     0 1 2 3 4 5
+4    0 1 2 3 4 5
+5    0 1 2 3 4 5
+
+for i in range(6): # 0 1 2 3 4 5
+    print(i,end=" - ")
+    for j in range(6):
+        print(j,end=" ")
+    print("\n")
+
+for i in range(6): # 0 1 2 3 4 5
+    
+    for j in range(i):
+        print("*",end=" ")
+    print("\n")
+
+
+0 
+0 1
+0 1 2
+0 1 2 3
+0 1 2 3 4
+
+1 
+1 2 
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+
+
+for i in range(6): # 0 1 2 3 4 5
+
+    for j in range(i):
+        print(j,end=" ")
+    print("\n")
+
+
+for i in range(1,6): # 0 1 2 3 4 5
+
+    for j in range(i):
+        print(j,end=" ")
+    print("\n")
+
+
+for i in range(1,7): # 0 1 2 3 4 5
+
+    for j in range(1,i):
+        print(j,end=" ")
+    print("\n")
+
+0
+1 1
+2 2 2
+3 3 3 3
+4 4 4 4 4
+
+for i in range(1,6): # 0 1 2 3 4 5
+
+    for j in range(i):
+        print(i,end=" ")
+    print("\n")
+
+
+for i in range(5,0,-1): # 0 1 2 3 4 5
+
+    for j in range(i):
+        print(i,end=" ")
+    print("\n")
+
+for i in range(5,0,-1): # 0 1 2 3 4 5
+
+    for j in range(i,0,-1):
+        print(j,end=" ")
+    print("\n")
+
+for i in range(1,6): # 0 1 2 3 4 5
+
+    for j in range(i,0,-1):
+        print(j,end=" ")
+    print("\n")
+
+=====================================================================
+
+print("hai")
+try:
+    print(10/0)
+except ZeroDivisionError as e:
+    print(e)
+print("hello")
+print("end")
+========================================
+
+print("hai")
+try:
+    print(a)
+except:
+    print("except block")
+print("hello")
+print("end")
+========================================
+
+print("hai")
+try:
+    print(10/0)
+except ZeroDivisionError as e:
+    print("except block1")
+except NameError as e1:
+    print("Except block 2")
+print("hello")
+print("end")
+======================================
+
+print("hai")
+try:
+    print(10/0)
+
+except ZeroDivisionError as e:
+    print("except block1")
+except NameError as e1:
+    print("Except block 2")
+except Exception as e3:
+    print("Exception ")
+print("hello")
+print("end")
+============================================
+
+print("hai")
+try:
+    print("before exception")
+    print(10/2)
+    print("After exception")
+except:
+    print("except block1")
+else:
+    print("no Exception")
+
+print("end")
+================================================
+
+print("hai")
+try:
+    print("outer try")
+    print(10/2)
+    try:
+        print(10/0)
+    except:
+        print("inner except")
+
+except:
+    print("except block1")
+else:
+    print("else block")
+
+print("end")
+===============================================
+
+print("hai")
+try:
+    print("outer try")
+    print(10/2)
+    try:
+        print(10/0)
+    except:
+        print(10/0)
+
+except:
+    print("except block1")
+else:
+    print("else block")
+
+print("end")
+================================================
+
+print("hai")
+try:
+    print("outer try")
+    print(10/2)
+    try:
+        print(10/0)
+    except:
+        try:
+            print(10/0)
+        except:
+            print("Except except block")
+
+except:
+    print("except block1")
+else:
+    print("else block")
+
+print("end")
+===========================================
+name=input("Enter name")
+marks=int(input("Enter marks"))
+file=open("D://Python file/abc.txt","w")
+file.write(name)
+file.write(str(marks))
+file.close();
+=============================================
+
+file=open("D://Python file/abc.txt","w")
+for i in range(5):
+    name = input("Enter name")
+    marks = int(input("Enter marks"))
+    file.write(name)
+    file.write("\t")
+    file.write(str(marks))
+    file.write("\n")
+
+file.close();
+=========================================
+
+file=open("D://Python file/abc.xls","w")
+for i in range(5):
+
+    file.write(input("Enter name"))
+    file.write("\t")
+    file.write(input("Enter marks"))
+    file.write("\n")
+
+file.close();
+===========================================
+
+file=open("D://Python file/abc.txt","r")
+data=file.read()
+print(data)
+file.close();
+===========================================
+
+
+file.readLine()
+file.readLines()
+------------------------------------------------
+
+read data from abc.txt file and find
+
+no.of words
+no.of char's
+no.lines
+noof char's with out spaces
+no .of digits 
+
+store into xyz.txt
+==========================================
+read data from abc.txt file and find each word frequency 
+================================================================
+String:
+
+
+slicing: 
+
+str="hai hello"
+
+str[2:4]
+
+isalpha()
+isdigit()
+isalnum()
+isspace()
+isTitle()
+isUpper()
+isLower()
+split()
+strip()
+lstrip()
+rstrip()
+capatilize()
+title()
+upper()
+lower()
+
+for i in str:
+str.count("hai")
+str.count("hai",5)
+str.count("hai",5,10);
+
+find()
+index()
+str="hai hello hai niit hai"
+print(str.count("hai"))
+print(str.count("hai",5))
+print(str.count("hai",5,15))
+
+str="hai hello hai niit hai"
+print(str.find("hai"))
+print(str.find("hai",5))
+print(str.find("hai",5,15))
+print(str.find("abc"))
+
+str="hai hello hai niit hai"
+print(str.index("hai"))
+print(str.index("hai",5))
+print(str.index("hai",5,15))
+print(str.index("abc"))
+============================================================
+class calsi:
+    def add(self):
+        print("this is add method")
+    def sub(self):
+        print("this is sub method")
+
+obj=calsi();
+obj.sub()
+obj.add()
+
+===============================================
+class calsi:
+    def add(self):
+        print("this is add method")
+    def sub(self):
+        print("this is sub method")
+    def __init__(self):
+        print("this is init method")
+
+obj=calsi();
+obj.add()
+obj.sub()
+
+
+
+---------------------------------------------------
+a=90;b=10;c=0
+class calsi:
+
+    def add(self,k,l):
+        c=0;m=20;b=30
+        c=k+a+b;
+        print("addition is: ",c)
+
+    def __init__(self):
+        print("this is init method")
+
+obj=calsi();
+obj.add(80,30)
+
+==========================================
+class Bank:
+    def validation(self):
+        uname=input("Enter username")
+        if uname=='admin':
+            pwd = input("Enter password")
+            if pwd=="admin":
+                obj.viewOption()
+            else:
+                print("Invalid password")
+        else:
+            print("invalid username")
+    def viewOption(self):
+        opt=0
+        print("1.Depsoite")
+        print("2. Withdraw")
+        print("3. balEnquiry")
+        print("0. exit")
+
+        opt = int(input("Enter option"))
+        while(opt!=0):
+
+            if opt==1:
+                obj.deposite()
+            elif opt==2:
+                print("withdraw")
+            elif opt==3:
+                print("balenquiry")
+            else:
+                print("invalid option")
+        print("Thank you visit again")
+    def deposite(self):
+        amt=0;
+        ac_bal=10000;
+        amt=int(input("Enter deposite amount"))
+        if amt%100==0:
+            if amt<=40000:
+                ac_bal=ac_bal+amt;
+                print("Avaiable bal is: ",ac_bal)
+                obj.viewOption()
+            else:
+                print("deposite limit is 40000 only")
+        else:
+            print("amt should be multiples of 100 only")
+
+obj=Bank();
+obj.validation()
+
+======================================================================
+class Bank:
+
+    def validation(self,count):
+
+        pin=int(input("Enter pin"))
+        if pin==1234:
+            obj.viewOption(0);
+        else:
+            count=count+1
+            print("Invalid pin please tay again");
+            if count<3:
+                obj.validation(count);
+            else:
+                print("invalid pin card blocked for the day")
+
+
+
+    def viewOption(self,count):
+        opt=0;
+        print("1.Depsoite")
+        print("2. Withdraw")
+        print("3. balEnquiry")
+        print("0. exit")
+
+        opt = int(input("Enter option"))
+        if opt==1:
+            obj.deposite()
+        elif opt==2:
+            if count<3:
+                obj.withdraw(count);
+            else:
+                print("withdraw limit is 3 only");
+        elif opt==3:
+           print("bal enquiry")
+        else:
+            print("invalid option")
+        print("Thank you visit again")
+    def deposite(self):
+        amt=0;
+        ac_bal=10000;
+        amt=int(input("Enter deposite amount"))
+        if amt%100==0:
+            if amt<=40000:
+                ac_bal=ac_bal+amt;
+                print("Avaiable bal is: ",ac_bal)
+                obj.viewOption()
+            else:
+                print("deposite limit is 40000 only")
+        else:
+            print("amt should be multiples of 100 only")
+    def withdraw(self,count):
+        amt=0;ac_bal=50000;
+        amt=int(input("Enter withdraw amount"))
+        if amt%100==0:
+            if ac_bal-amt>=1000:
+                if amt<=10000:
+                    ac_bal=ac_bal-amt;
+                    obj.no_of_notes(amt);
+                    print("avaiable bal ",ac_bal)
+                    print("count: ",count)
+                    count=count+1
+                    obj.viewOption(count)
+
+                else:
+                    print("withdraw limit is 10000 only")
+                    obj.viewOption()
+            else:
+                print("Please maintaine min bal");
+                obj.viewOption()
+        else:
+            print("withdraw amount should be multiples of 100 only")
+            obj.viewOption()
+    def no_of_notes(self,amt):
+        a=0;b=0;c=0;
+        if amt>=2000:
+            a=amt//2000;
+            amt=amt-(a*2000)
+            print("2000 rupees notes are : ",a);
+        if amt>=500:
+            b = amt // 500;
+            amt = amt - (b * 500)
+            print("500 rupees notes are : ", b);
+        if amt>=100:
+            c = amt // 100;
+            print("100 rupees notes are : ", c);
+obj=Bank();
+obj.validation(0)
+
+=============================================
+import sqlite3
+
+con=sqlite3.connect("D://Sql database/db1.db")
+con.execute("create table emp(empid integer, empname text)")
+con.commit()
+con.close()
+=================================================
+import sqlite3
+
+con=sqlite3.connect("D://Sql database/db1.db")
+for i in range(5):
+    con.execute("insert into emp values(101,'ravi')")
+con.commit()
+con.close()
+========================================================
+select * from student
+name  maks  gender
+
+insert into student values('aaa',90,'male');
+=========================================
+import sqlite3
+name=input("Enter name")
+marks=int(input("Enter marks"))
+gender=input("Enter gender")
+con=sqlite3.connect("D://Sql database/db1.db")
+con.execute("insert into student values(?,?,?)",(name,marks,gender))
+con.commit()
+con.close()
+========================================================================
+import sqlite3
+name=input("Enter name")
+con=sqlite3.connect("D://Sql database/db1.db")
+con.execute("delete from student where name=?",(name,))
+con.commit()
+con.close()
+===================================================
+update student set marks=67 where name='ddd';
+import sqlite3
+name=input("Enter name")
+marks=int(input("Enter new marks"))
+con=sqlite3.connect("D://Sql database/db1.db")
+con.execute("update student set marks=? where name=?",(marks,name))
+con.commit()
+con.close()
+===============================================================
+select * from student;
+select * from student where name='ravi'
+update
+delete
+insert
+
+min()
+max()
+sum()
+count()
+avg()
+
+
+select min(marks) from student;
+select max(marks) from student;
+select avg(marks) from student;
+select sum(marks) from student;
+select count(marks) from student;
+
+
+
+select min(marks) as min_score from student  where gender='male';
+
+select max(marks) as min_score from student;
+
+select sum(marks) as min_score from student;
+select count(marks) as min_score from student;
+select avg(marks) as min_score from student;
+
+
+select * from student
+
+
+DDL: create,rename,trucate,drop,alter;
+DML: select,insert,update,delete  (order by,min(),max(),count(),sum(),avg)
+
+import sqlite3
+count=0
+file=open("D://abc.txt",'r')
+con=sqlite3.connect("D://Sql database/db1.db")
+words1=file.read().split("\n")
+words=[]
+for i in words1:
+    words.extend(i.split(" "))
+print(words)
+for word in words:
+    for i in range(len(words)):
+        if word==words[i]:
+            count=count+1
+            words[i]="null"
+    if word!="null":
+        print(word," ",count)
+        con.execute("insert into words values(?,?)",(word,count))
+    count=0
+con.commit()
+con.close()
+
+========================================================================
+set1={2,3,4,5,6,2}
+set2={45,23,90,4,5}
+print(set1)
+print(set2)
+print(set1.union(set2))
+---------------------------------------
+set1={2,3,4,5,6,2}
+set2={45,23,90,4,5}
+print(set1)
+print(set2)
+print(set1.intersection(set2))
+===========================================
+set1={2,3,4,5,6,2}
+set2={45,23,90,4,5}
+set3={3,4,90,67,45}
+print(set1.intersection(set2).intersection(set3))
+
+=================================================
+set1={2,3,4,5,6,2}
+set2={45,23,90,4,5}
+set3={3,4,90,67,45}
+print(set1.union(set2).union(set3))
+========================================
+set1={2,3,4,5,6,2}
+set2={45,23,90,4,5}
+print(set1.difference(set2))
+print(set2.difference(set1))
+
+=============================================
+set1={2,3,4,5,6,2}
+set2={45,23,90,4,5}
+
+print(set1.difference(set2).union(set2.difference(set1)))
+
+===============================================
+set1={2,3,4,5,6,2}
+set2={45,23,90,4,5}
+set1.intersection_update(set2)
+print(set1)
+print(set2)
+
+
+
+==============================================
+set1={2,3,4,5,6,2}
+set2={45,23,90,4,5}
+set1.difference_update(set2)
+print(set1)
+print(set2)
+
+===========================================
+1. set does not allow duplicate values
+2. it does not follow insertion order
+
+
+union.,intersection,intersection_update,differecnce,diff_update
+set1={2,3,4,5,6,2}
+for i in set1:
+    print(i)
+
+======================================================
+set1={2,3,4,5,6,12}
+print(set1.pop())
+print(set1)
+======================================================
+set1={2,3,4,5,6,12}
+set2={}
+set2=set1.copy()
+print(set1)
+print(set2)
+set2.clear()
+print(set2)
+==============================================
+set1={2,3,4,5,6,12}
+print(set1)
+set1.add(90)
+print(set1)
+================================
+set1={2,3,4,5,6,12}
+
+set1.remove(4)
+print(set1)
+
+================================
+set1={2,3,4,5,6,12}
+set2={4,5,6,1}
+print(set2.issubset(set1))
+
+=================================
+
+a=90
+b="hai"
+c=9.4
+t=(3,89)
+list=[67,89]
+dict={8}
+d={2:3}
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(t))
+print(type(list))
+print(type(dict))
+print(type(d))
+
+
+
+dict={1:'ravi',12:'ramu',3:'hai',4:"hello"}
+print(dict)
+print(dict[12])
+for i in dict:
+    print(i)
+
+
+
+dict={1:'ravi',12:'ramu',3:'hai',4:"hello"}
+print(dict.keys())
+print(dict.values())
+for i in dict.keys():
+    print(i)
+
+
+
+dict={1:'ravi',12:'ramu',3:'hai',4:"hello"}
+for i in dict.keys():
+    print(i)
+for i in dict.values():
+    print(i)
+
+
+
+dict={1:'ravi',12:'ramu',3:'hai',4:"hello"}
+print(dict)
+for i in dict.items():
+    print(i)
+
+
+dict={1:'ravi',12:'ramu',3:'hai',4:"hello"}
+
+print(dict[3])
+print(dict.get(4))
+
+dict={1:'ravi',12:'ramu',3:'hai',4:"hello"}
+print(len(dict))
+
+dict={2:89,"hai":90,3.4:"hello",3:"hai",2:33,4:"hai"}
+print(dict)
+
+import time
+for i in range(10):
+    print(i)
+    time.sleep(2)
+
+dict={1:34,2:45,3:56,4:78}
+
+print(dict.popitem())
+print(dict)
+dict={1:34,2:45,3:56,4:78}
+dict[2]=90;
+print(dict)
+=======================================================================
+
+
+from pyexcel_xls import save_data
+data= {"sheet 1":[[1,2,3],[4,5,6]] }
+save_data("D://reports.xls",data)
+
+import xlsxwriter
+
+workbook = xlsxwriter.Workbook('D://test.xlsx')
+worksheet = workbook.add_worksheet()
+
+worksheet.write('A1', 'S1')
+worksheet.write('B1', 'S2')
+worksheet.write('C1', 'S3')
+worksheet.write('A2', 90)
+worksheet.write('B2', 100)
+worksheet.write('C2', 56)
+
+
+workbook.close()
+==================================================
+import xlsxwriter
+
+workbook = xlsxwriter.Workbook('D://test.xlsx')
+worksheet = workbook.add_worksheet()
+worksheet1 = workbook.add_worksheet()
+s1=int(input("Enter s1 value"))
+s2=int(input("Enter s2 value"))
+s3=int(input("Enter s3 value"))
+worksheet.write('A1', 'S1')
+worksheet.write('B1', 'S2')
+worksheet.write('C1', 'S3')
+worksheet.write('A2', s1)
+worksheet.write('B2', s2)
+worksheet.write('C2', s3)
+
+worksheet1.write('D10','niit')
+
+workbook.close()
+
+==================================================
+https://xlsxwriter.readthedocs.io/format.html
+==================================================
+import xlsxwriter
+
+workbook = xlsxwriter.Workbook('D://test.xlsx')
+worksheet = workbook.add_worksheet()
+heading=workbook.add_format({'bold':True,'font_color':'red'})
+chart1=workbook.add_chart({'type':'pie'})
+s1=int(input("Enter male score"))
+s2=int(input("Enter female score "))
+worksheet.write('A1', 'Male',heading)
+worksheet.write('B1', 'Female',heading)
+worksheet.write('A2', s1)
+worksheet.write('B2', s2)
+chart1.add_series({'values':'=Sheet1!$A$1:$B$2'})
+worksheet.insert_chart('G12',chart1)
+
+
+workbook.close()
+
+=======================================================
+import xlsxwriter
+
+workbook = xlsxwriter.Workbook('D://test.xlsx')
+worksheet = workbook.add_worksheet()
+heading=workbook.add_format({'bold':True,'font_color':'red'})
+chart1=workbook.add_chart({'type':'pie'})
+s1=int(input("Enter male score"))
+s2=int(input("Enter female score "))
+worksheet.write('A1', 'Male',heading)
+worksheet.write('B1', 'Female',heading)
+worksheet.write('A2', s1)
+worksheet.write('B2', s2)
+chart1.add_series({'values':'=Sheet1!$A$1:$B$2'})
+worksheet.insert_chart('G12',chart1)
+
+
+workbook.close()
+
+==================================================
+WAP to read data from file and find frequency of each word.
+and store word along with frequency in database (words table (word,count)) and
+store into excel generate charts.
+ 
+
+install openpyxl
+
+pip install openpuxl
+pip list
+
+
+import openpyxl
+num1=num2=num3=0;
+sheets=openpyxl.load_workbook("D://reports.xlsx")
+Sheet=input("Enter Sheet name")
+sheet_name=sheets.get_sheet_by_name(Sheet);
+num1=sheet_name['A1'].value;
+num2=sheet_name['B1'].value;
+num3=sheet_name['C1'].value;
+sum=num1+num2+num3;
+print(sum)
+=========================================================
+
+pyexcel read_data  save_data
+xlxwriter  writing
+openpyxl   read data from excel.
+------------------------------------
+
+from pyexcel_xls import save_data
+data= {"sheet 1":[[1,2,3],[4,5,6]] }
+save_data("D://reports.xls",data)
+
+import xlsxwriter
+
+workbook = xlsxwriter.Workbook('D://test.xlsx')
+worksheet = workbook.add_worksheet()
+
+worksheet.write('A1', 'S1')
+worksheet.write('B1', 'S2')
+worksheet.write('C1', 'S3')
+worksheet.write('A2', 90)
+worksheet.write('B2', 100)
+worksheet.write('C2', 56)
+
+
+workbook.close()
+==================================================
+import xlsxwriter
+
+workbook = xlsxwriter.Workbook('D://test.xlsx')
+worksheet = workbook.add_worksheet()
+worksheet1 = workbook.add_worksheet()
+s1=int(input("Enter s1 value"))
+s2=int(input("Enter s2 value"))
+s3=int(input("Enter s3 value"))
+worksheet.write('A1', 'S1')
+worksheet.write('B1', 'S2')
+worksheet.write('C1', 'S3')
+worksheet.write('A2', s1)
+worksheet.write('B2', s2)
+worksheet.write('C2', s3)
+
+worksheet1.write('D10','niit')
+
+workbook.close()
+
+==================================================
+https://xlsxwriter.readthedocs.io/format.html
+==================================================
+import xlsxwriter
+
+workbook = xlsxwriter.Workbook('D://test.xlsx')
+worksheet = workbook.add_worksheet()
+heading=workbook.add_format({'bold':True,'font_color':'red'})
+chart1=workbook.add_chart({'type':'pie'})
+s1=int(input("Enter male score"))
+s2=int(input("Enter female score "))
+worksheet.write('A1', 'Male',heading)
+worksheet.write('B1', 'Female',heading)
+worksheet.write('A2', s1)
+worksheet.write('B2', s2)
+chart1.add_series({'values':'=Sheet1!$A$1:$B$2'})
+worksheet.insert_chart('G12',chart1)
+
+
+workbook.close()
+
+=======================================================
+import xlsxwriter
+
+workbook = xlsxwriter.Workbook('D://test.xlsx')
+worksheet = workbook.add_worksheet()
+heading=workbook.add_format({'bold':True,'font_color':'red'})
+chart1=workbook.add_chart({'type':'pie'})
+s1=int(input("Enter male score"))
+s2=int(input("Enter female score "))
+worksheet.write('A1', 'Male',heading)
+worksheet.write('B1', 'Female',heading)
+worksheet.write('A2', s1)
+worksheet.write('B2', s2)
+chart1.add_series({'values':'=Sheet1!$A$1:$B$2'})
+worksheet.insert_chart('G12',chart1)
+
+
+workbook.close()
+
+==================================================
+WAP to read data from file and find frequency of each word.
+and store word along with frequency in database (words table (word,count)) and
+store into excel generate charts.
+ 
+
+install openpyxl
+
+pip install openpuxl
+pip list
+
+
+import openpyxl
+num1=num2=num3=0;
+sheets=openpyxl.load_workbook("D://reports.xlsx")
+Sheet=input("Enter Sheet name")
+sheet_name=sheets.get_sheet_by_name(Sheet);
+num1=sheet_name['A1'].value;
+num2=sheet_name['B1'].value;
+num3=sheet_name['C1'].value;
+sum=num1+num2+num3;
+print(sum)
+=========================================================
+
+pyexcel read_data  save_data
+xlxwriter  writing
+openpyxl   read data from excel.
+------------------------------------
+What Is A Python Numpy Array?
+You already read in the introduction that NumPy arrays are a bit like Python lists, but still very much different at the same time.
+------------------------------------------
+
+
+=========================================
+import numpy as np
+my_array = np.array([1,2,3,4,5,6,9,6])
+print(my_array)
+====================================================
+import numpy as np
+my_array = np.array([[1,2,3,4],[5,6,9,6],[1,2,3,4]])
+print(my_array)
+====================================================
+
+import numpy as np
+data=np.arange(15).reshape(3,5)
+print(data)
+print(data.shape)  # dispaly shape of array (3 rows,5 cols)
+====================================================
+
+import numpy as np
+data=np.arange(15).reshape(3,5)
+print(data)
+print(data.shape)  # dispaly shape of array (3 rows,5 cols)
+print(data.ndim)   # two dimentional array
+print(data.dtype.name)   # data type, 32/64 bitos
+print(data.itemsize)  # size of each element
+print(type(data))    # type of data
+===================================================
+
+import numpy as np
+arr=np.array([1,2,3,4])
+print(arr)
+print(type(arr))
+print(arr.dtype)
+arr1=np.array([1.3,2.9,3.4,4.3])
+print(arr1)
+print(type(arr1))
+print(arr1.dtype)
+====================================================
+>>> a = np.array(1,2,3,4)    # WRONG
+>>> a = np.array([1,2,3,4])  # RIGHT
+
+import numpy as np
+c=0
+a = np.array( [20,30,40,50] )
+b= np.arange(1,5)  # b=np.arange(4) => [0,1,2,3]
+print(b)
+c=a-b;
+print(c)
+----------------------------------------------------------
+import numpy as np
+c=0
+a = np.array( [20,30,40,50] )
+b= np.arange(1,5)  # b=np.arange(4) => [0,1,2,3]
+print(b)
+c=a*b;
+print(c)
+---------------------------------------------------------------
+import numpy as np
+c=0
+a = np.array( [20,30,40,50] )
+
+print(a<35)
+==================================
+import numpy as np
+A = np.array( [[1,2],[0,3]] )
+B = np.array( [[1,1],[5,4]] )
+print(A)
+print(B)
+print(A*B)     # elementwise product
+
+============================================
+import numpy as np
+A = np.array( [[1,2],[0,3]] )
+B = np.array( [[1,1],[5,4]] )
+print(A)
+print(B)
+print(A@B)     # matrix product
+====================================================
+import numpy as np
+A = np.array( [[1,2],[0,3]] )
+B = np.array( [[1,1],[5,4]] )
+print(A)
+print(B)
+print(A.dot(B)) # matrix product
+======================================================
+import numpy as np
+a = np.ones((2,3), dtype=int)
+print(a)
+a*=8
+print(a)
+===================================================
+import numpy as np
+a = np.ones((2,3), dtype=int)
+a*=8
+print(a)
+print(a.sum())
+====================================================
+import numpy as np
+a=np.array([[4,9,7,8],[45,87,90,34]])
+print(a)
+print(a.sum())
+print(a.min())
+print(a.max())
+=================================================
+
+import numpy as np
+a=np.array([[4,9,7,8],[45,87,90,34]])
+print(a)
+
+print(a.sum(axis=0))  # sum of each column
+----------------------------------------------------
+import numpy as np
+a=np.array([[4,9,7,8],[45,87,90,34]])
+print(a)
+
+print(a.sum(axis=1))  # sum of each row
+====================================================
+import numpy as np
+a=np.array([[4,9,7,8],[45,87,90,34]])
+print(a)
+
+print(a.max(axis=1))  # max of each row
+==================================================
+import numpy as np
+a=np.array([[4,9,7,8],[45,87,90,34]])
+print(a)
+print(a.cumsum(axis=1))    # cumulative sum along each row
+===================================================
+import numpy as np
+a=np.array([25,125,34,49])
+print(a)
+print(np.sqrt(a))
+
+=======================================================
+import numpy as np
+a=np.array([25,125,34,49])
+b=np.array([1,5,4,9])
+
+print(np.add(a,b))
+================================================
+
+import numpy as np
+a=np.array([[4,9,7,8],[45,87,90,34]])
+print(a)
+print(np.median(a,axis=1))
+=============================================
+import numpy as np
+a=np.array([[4.2,9.9,7,8],[45,87,90,34]])
+print(a)
+print(np.ceil(a))
+print(np.floor(a))
+print(np.round(a))
+
+=====================================================================
+import pandas as pd
+import numpy as np
+data=np.array([23,45,67,89,90,34])
+s=pd.Series(data,index=['a','b','c','d','e','t'])
+print(s)
+========================================
+import pandas as pd
+import numpy as np
+data=np.arange(6)
+print(pd.Series(data))
+
+
+====================================
+import pandas as pd
+import numpy as np
+data={1:34,3:56,6:78,8:89}
+print(pd.Series(data,index=[1,8,'c','d',3]))
+============================================
+import pandas as pd
+import numpy as np
+data=[23,45,56,78,90,11,34]
+d=pd.Series(data,index=['a','b','c','d','e','f','g'])
+print(d[2])
+print(d[:3])
+print(d[-3:])
+print(d[::-1])
+==========================================
+import pandas as pd
+import numpy as np
+data=[23,45,56,78,90,11,34]
+d=pd.Series(data,index=['a','b','c','d','e','f','g'])
+print(d['d'])
+print(d['b'],d['g'],d['e'])
+========================================
+import pandas as pd
+import numpy as np
+data=np.array([23,45,56,78,90,11]).reshape(2,3)
+print(pd.DataFrame(data))
+
+================================================
+import pandas as pd
+import numpy as np
+data=np.array([23,45,56,78,90,11]).reshape(2,3)
+print(pd.DataFrame(data,index=['r1','r2']))
+
+=================================================
+import pandas as pd
+import numpy as np
+data=np.array([23,45,56,78,90,11,34,12,56,78,78,12,34,78]).reshape(7,2)
+df=pd.DataFrame(data)
+print(df)
+print(df.head(3))
+print(df.tail(2))
+=========================================================
+import pandas as pd
+import numpy as np
+data=np.array([23,45,56,78,90,11,34,12,56,78,78,12,34,78]).reshape(7,2)
+df=pd.DataFrame(data)
+print(df)
+df=df.drop(4)
+print(df)
+================================================
+import pandas as pd
+import numpy as np
+data=np.array([23,45,56,78,90,11,34,12,56,78,78,12,34,78]).reshape(7,2)
+df=pd.DataFrame(data,index=['r1','r2','r3','r4','r5','r6','r7'])
+print(df)
+print(df.drop('r3'))
+==================================================
+import pandas as pd
+import numpy as np
+data=np.array([23,45,56,78,90,11,34,12,56,78,78,12,34,78]).reshape(7,2)
+df=pd.DataFrame(data,index=['r1','r2','r3','r4','r5','r6','r7'])
+print(df[:])
+print(df['r2':'r5'])
+
+===================================
+import pandas as pd
+import numpy as np
+data=np.array([23,45,56,78,90,11,34,12,56,78,78,12,34,78]).reshape(7,2)
+df=pd.DataFrame(data,index=['r1','r2','r3','r4','r5','r6','r7'])
+print(df[:])
+print(df['r2':'r5'])
+
+========================================
+import pandas as pd
+import numpy as np
+data=open("D://abc.txt","r")
+d2=[]
+
+#data={1:['ravi',56,'Hyd','Engineer'],2:['ramu',52,'pune','teacher']}
+#data={1:'ravi',2:'ramu'}
+#df=pd.DataFrame(data,index=['r1','r2'])
+#print(df
+# )
+#s=pd.Series(data)
+d=data.read().split("\n")
+
+for i in d:
+    d2.append(i.split(","))
+
+d1=np.array(d2[:])
+d2=pd.DataFrame(d1)
+print(d2.head(10))
+
+========================================================
+class students:
+	def setDetails(self,name,marks):
+		self.name=name;
+		self.marks=marks;
+	def getDetails(self):
+		print("Name: ",self.name);
+		print("Marks: ",self.marks);
+std=students()
+std.setDetails('nagul',99)
+std.getDetails()
+---------------------------------------------------------
+class students:
+	def __init__(self):
+		self.bal=10000;
+	def deposite(self):
+		amt=int(input("enter d aount"))
+		self.bal=self.bal+amt
+	def viewbalance(self):
+		print("Bal: ",self.bal);
+
+std=students()
+std.deposite()
+std.viewbalance()
+=========================================================
+class A:
+	def add(self):
+		print("A class Add method")
+class B(A):
+	def m1(self):
+		print("Class B m1 method")
+b=B();
+b.m1()
+b.add()
+========================================================
+class A:
+	def m1(self):
+		print("A class Add method")
+class B(A):
+	def m1(self):
+		print("Class B m1 method")
+b=B();
+b.m1()
+
+===========================================================
+
+class A:
+	def m1(self):
+		print("A class Add method")
+class B(A):
+	def m1(self):
+		print("Class B m1 method")
+b=A();
+b.m1()
+
+==========================================================
+class A:
+	def m1(self):
+		print("A class Add method")
+class B(A):
+	def m2(self):
+		print("Class B m1 method")
+class C(B):
+	def m3(self):
+		print("C class m1 method")
+b= C();
+b.m1()
+==========================================================
+class A:
+	def m1(self):
+		print("A class Add method")
+class B:
+	def m1(self):
+		print("Class B m1 method")
+class C(A,B):
+	def m3(self):
+		print("C class m1 method")
+b= C();
+b.m1()
+
+=============================================================
+
+class A:
+	def m1(self):
+		print("A class Add method")
+class B:
+	def m1(self):
+		print("Class B m1 method")
+class C(A,B):
+	def m3(self):
+		print("C class m1 method")
+b= C();
+b.m1()
+print(issubclass(C,B))
+print(isinstance(b,C))
+
+==========================================================
+class A:
+	def m1(self):
+		print("A class Add method")
+class B:
+	def m1(self):
+		print("Class B m1 method")
+b=B()
+b.m1()
+=====================================================
+import pandas as pd
+df=pd.read_csv("D://Python files/realEstate_trans.csv",header=None,names=['aaa','bbb','ccc'])
+print(df)
+====================================================
+import pandas as pd
+df=pd.read_csv("D://Python files/realEstate_trans.csv",nrows=3)
+print(df)
+========================================================
+import pandas as pd
+df=pd.read_csv("D://Python files/realEstate_trans.csv",nrows=3,na_values=['SACRAMENTO'])
+print(df)
+-------------------------------------------------------------------
+
+import pandas as pd
+df=pd.read_csv("D://Python files/realEstate_trans.csv",nrows=3,na_values={'city':'SACRAMENTO','zip':95838})
+
+print(df)
+df.to_csv("D://Python files/aaa.csv")
+=================================================================
+import pandas as pd
+df=pd.read_csv("D://Python files/realEstate_trans.csv",nrows=3,na_values={'city':'SACRAMENTO','zip':95838})
+
+print(df)
+df.to_csv("D://Python files/aaa.csv",index=False)
+=============================================================
+import pandas as pd
+df=pd.read_csv("D://Python files/realEstate_trans.csv",nrows=13,na_values={'city':'SACRAMENTO','zip':95838})
+
+print(df)
+print(df.columns)
+df.to_csv("D://Python files/aaa.csv",columns=['street','zip'],index=False)
+-----------------------------------------------------------------------------
+import pandas as pd
+df=pd.read_excel("D://Python files/realEstate_trans.xlsx")
+print(df)
+=================================================================
+import pandas as pd
+df=pd.read_excel("D://Python files/realEstate_trans.xlsx",'Sheet1')
+print(df)
+
+================================================================
+import pandas as pd
+def convert_state_cell(cell):
+	if cell=='NA':
+		return "AP"
+	return cell;
+df=pd.read_excel("D://Python files/realEstate_trans.xlsx",converters={'state':convert_state_cell})
+print(df)
+
+=======================================================================
+import pandas as pd
+def convert_state_cell(cell):
+	if cell=='NA':
+		return "AP"
+	return cell;
+df=pd.read_excel("D://Python files/realEstate_trans.xlsx",'Sheet1',converters={'state':convert_state_cell})
+print(df)
+df.to_excel("D://Python files/newexel.xlsx",sheet_name="sheet12")
+
+======================================================================
+import pandas as pd
+def convert_state_cell(cell):
+	if cell=='NA':
+		return "AP"
+	return cell;
+df=pd.read_excel("D://Python files/realEstate_trans.xlsx",'Sheet1',converters={'state':convert_state_cell})
+print(df)
+df.to_excel("D://Python files/newexel.xlsx",sheet_name="sheet12",startrow=2,startcol=4 )
+
+============================================================================
+import pandas as pd
+df1=pd.DataFrame({1:[23,45,67,78],2:'bbb',3:'cccc'})
+df2=pd.DataFrame({1.2:[1,2,3,4,5],2.5:"hello"})
+
+with pd.ExcelWriter("D://out.xlsx")as writer:
+	df1.to_excel(writer, sheet_name='xyz')
+	df2.to_excel(writer,sheet_name="abc")
+=======================================================================
+import pandas as pd
+df=pd.read_csv("D://911.csv")
+print(df)
+del df['lat']
+print(df)
+df.pop('lng')
+print(df)
+
+=======================================================================
+import pandas as pd
+import numpy as np
+df=pd.Series(np.random.randn(12))
+print(df)
+print(df.size)
+
+================================================================
+import pandas as pd
+import numpy as np
+df=pd.Series(np.random.randn(12))
+#print(df)
+print(df.values)
+print(df.size)
+
+=================================================
+import urllib.request
+from bs4 import BeautifulSoup
+req = urllib.request.Request("https://www.w3schools.com/java/java_data_types.asp", data=None,
+             headers={ 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36' }
+                                      )
+f = urllib.request.urlopen(req)
+str  = f.read().decode('utf-8')
+soup = BeautifulSoup(str,'html.parser')
+data = soup.body
+for script in soup(["script","style"]):
+    script.extract();
+text=soup.get_text();
+print(text)
+==================================================================
+import pandas as pd
+df=pd.read_csv("D:Python files/realEstate_trans.csv")
+print(df['latitude'].max())
+=====================================
+import pandas as pd
+df=pd.read_csv("D:Python files/realEstate_trans.csv")
+print(df['latitude'].min())
+==================================================
+import pandas as pd
+df=pd.read_csv("D:Python files/realEstate_trans.csv")
+print(df['latitude'].count())
+print(df['latitude'].sum())
+===============================================
+import pandas as pd
+df=pd.read_csv("D:Python files/realEstate_trans.csv")
+print(df[df.latitude>38.67])
+
+=======================================================
+import pandas as pd
+df=pd.read_csv("D://ipl.csv")
+print(df['year'].max())
+print(df['year'].min())
+=========================================
+import pandas as pd
+df=pd.read_csv("D://ipl.csv")
+print(df[df.year>2012])
+==============================================
+import pandas as pd
+df=pd.read_csv("D://ipl.csv")
+g=df.groupby('year')
+print(g.get_group(2016))
+===========================================
+import pandas as pd
+df=pd.read_csv("D://ipl.csv")
+g=df.groupby('year')
+print(g.max())
+============================================
+import pandas as pd
+df=pd.read_csv("D://olympic_data.csv",sep="\t")
+g=df.groupby('ountry')
+print(g.max())
+================================================
+
+
+
+
+
+pyexcel
+urllib
+be
+sqllite3
+xlswriter
+===================================================================
+import xlsxwriter
+import openpyxl
+from bs4 import BeautifulSoup
+import urllib.request
+import sqlite3
+
+excel_document = openpyxl.load_workbook('D://input.xlsx')
+sheet_name=input("Enter sheet name")
+
+sheet = excel_document.get_sheet_by_name(sheet_name)
+url=sheet['A1'].value
+
+req = urllib.request.Request(url, data=None,
+             headers={ 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36' }
+                                      )
+f = urllib.request.urlopen(req)
+str  = f.read().decode('utf-8')
+
+soup = BeautifulSoup(str,'html.parser')
+data = soup.body
+for script in soup(["script","style"]):
+    script.extract();
+text=soup.get_text();
+con=sqlite3.connect("D://DATABASE/words.db");
+keyword1=sheet['A2'].value
+keyword2=sheet['A3'].value
+keyword3=sheet['A4'].value
+keyword4=sheet['A5'].value
+
+Frequency1=text.count(keyword1)
+Frequency2=text.count(keyword2)
+Frequency3=text.count(keyword3)
+Frequency4=text.count(keyword4)
+
+words=len(text.split(" "))
+con.execute("insert into words values(?,?)",(keyword1,Frequency1));
+con.execute("insert into words values(?,?)",(keyword2,Frequency2));
+con.execute("insert into words values(?,?)",(keyword3,Frequency3));
+con.execute("insert into words values(?,?)",(keyword3,Frequency4));
+
+con.commit()
+con.close()
+d1=(Frequency1/words)*100;
+d2=(Frequency2/words)*100;
+d3=(Frequency3/words)*100;
+d4=(Frequency4/words)*100;
+
+
+"""
+print(keyword1,":",Frequency1)
+print(keyword2,":",Frequency2)
+print(keyword3,":",Frequency3)
+print(keyword4,":",Frequency4)
+"""
+
+workbook = xlsxwriter.Workbook('D:\\test.xlsx')
+worksheet = workbook.add_worksheet()
+
+heading=workbook.add_format({'bold':True,'font_color':'red'})
+chart1=workbook.add_chart({'type':'line'})
+worksheet.write('A1', "keywords",heading)
+worksheet.write('B1', "Density",heading)
+worksheet.write('A2', keyword1)
+worksheet.write('A3', keyword2)
+worksheet.write('A4', keyword3)
+worksheet.write('A5', keyword4)
+
+worksheet.write('B2', Frequency1)
+worksheet.write('B3', Frequency2)
+worksheet.write('B4', Frequency3)
+worksheet.write('B5', Frequency4)
+
+chart1.add_series({'values':'=Sheet1!$A$2:$B$5'})
+worksheet.insert_chart('H7',chart1)
+
+
+workbook.close()
+=======================================================
+from matplotlib import pyplot as plt
+plt.plot([23,15,67],[10,20,30]) # x and y axis values
+plt.show()
+----------------------------------------------------
+
+from matplotlib import pyplot as plt
+plt.plot([23,15,67],[10,20,30]) # x and y axis values
+plt.title("students info")
+plt.ylabel("y axis")
+plt.xlabel("x axis")
+plt.show()
+------------------------------------------
+
+from matplotlib import pyplot as plt
+x=[23,45,17]
+y=[10,20,30]
+plt.plot(x,y) # x and y axis values
+plt.title("students info")
+plt.ylabel("y axis")
+plt.xlabel("x axis")
+plt.show()
+------------------------------------------------
+
+from matplotlib import pyplot as plt
+from matplotlib import style
+style.use('ggplot')
+x=[23,45,17]
+y=[10,20,30]
+x1=[20,40,78]
+y1=[10,20,30]
+plt.plot(x,y,'g',label="line1",linewidth=3) # x and y axis values
+plt.plot(x1,y1,'b',label="line2",linewidth=3)
+plt.title("students info")
+plt.ylabel("y axis")
+plt.xlabel("x axis")
+plt.legend()
+plt.grid(True,color='b')
+plt.show()
+==================================================
+
+from matplotlib import pyplot as plt
+x=[23,45,17]
+y=[10,20,30]
+x1=[2,8,9]
+y1=[10,20,30]
+plt.bar(x,y,label="data1") # x and y axis values
+plt.bar(x1,y1,label="data2")
+plt.legend()
+plt.title("students info")
+plt.ylabel("y axis")
+plt.xlabel("x axis")
+
+plt.show()
+===================================================
+
+from matplotlib import pyplot as plt
+x=[22,55,67]
+bins=[10,50,90]
+plt.hist(x,bins,histtype='bar',rwidth=0.5)
+plt.legend()
+plt.title("students info")
+plt.ylabel("y axis")
+plt.xlabel("x axis")
+
+plt.show()
+===================================================
+
+from matplotlib import pyplot as plt
+x=[22,55,67]
+y=[10,50,90]
+plt.scatter(x,y)
+plt.legend()
+plt.title("students info")
+plt.ylabel("y axis")
+plt.xlabel("x axis")
+
+plt.show()
+=================================================
+
+from matplotlib import pyplot as plt
+
+slices=[2,13,4,5]
+technologies=['java','python','oracle','C']
+cols=['r','g','b','y']
+plt.pie(slices,labels=technologies,colors=cols,startangle=120,shadow=True,explode=(0.1,0,0.1,0))
+plt.show()
+===========================================
+#namedtuple
+from collections import namedtuple
+students=namedtuple('info','course,marks')
+s=students('python','90')
+print(s)
+print(s.course)
+print(s.marks)
+======================================================
+#namedtuple
+from collections import namedtuple
+students=namedtuple('info','course,marks')
+s=students._make(['python',90])
+print(s)
+print(s.course)
+print(s.marks)
+=================================================
+#namedtuple
+from collections import deque
+a=deque(['n','i','i','t'])
+print(a)
+a.append("python")
+print(a)
+a.appendleft("java")
+print(a)
+a.pop()
+print(a)
+a.popleft()
+print(a)
+=============================================
+from collections import ChainMap
+a={1:"niit",2:"aaa"}
+b={3:"kumar",4:"vvv"}
+c=ChainMap(a,b)
+print(c)
+print(c.pop(2))
+print(c)
+=================================================
+from collections import Counter
+list=[2,33,45,56,12,90,34,23,23,23]
+l=Counter(list)
+print(l)
+==========================================
+
+from collections import Counter
+aa=[2,33,45,23,12,90,34,23,34,23]
+l=Counter(aa)
+print(l)
+print(list(l.elements()))
+print(l.most_common())
+===========================================
+from  collections import OrderedDict
+a=OrderedDict()
+a[1]='aaa'
+a[2]='fff'
+a[3]='ddd'
+a[4]='ccc'
+a[5]='eee'
+a[6]='bb'
+print(a)
+print(a.keys())
+a[1]='oo'
+print(a)
+===========================================
+
+import pandas as pd
+%matplotlib inline
+df=pd.read_csv("D://abcd.csv",parse_dates=["date"],index_col="date")
+#print(df)
+#print(df.index)
+#print(df['2017']) #
+#print(df['2017-06'])
+#print(df['2017-06-01'])
+#print(df['2017'].close)
+#print(df['2017-06'].high)
+#print(df['2017'].high.sum())
+#print(df['2017'].high.mean())
+#print(df['2017-01-01':'2017-06-30'])
+#print(df.close.resample('M').mean())
+#print(df.close.resample('Q').mean())
+
+print(df.close.resample('W').mean().plot())
+
+==================================================================
+create empty graph
+----------------------------
+import networkx as nx
+import matplotlib.pyplot as plt
+# create graph object
+G = nx.Graph()
+nx.draw(G,with_labels=True)
+plt.show()
+-------------------------------------
+Addiding nodes to network
+-------------------------
+import networkx as nx
+import matplotlib.pyplot as plt
+# create graph object
+G = nx.Graph()
+G.add_node(34)    # adding single node
+G.add_node(23)
+G.add_node(90)
+nx.draw(G,with_labels=True)
+plt.show()
+========================================
+Adding elements from list
+------------------------------
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node(1)
+G.add_node(2)
+G.add_nodes_from([3,5,7,10])
+nx.draw(G,with_labels=True)
+plt.show()
+--------------------------------------------
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node(34)
+G.add_node(90)
+H = nx.path_graph(5)
+G.add_nodes_from(H)
+nx.draw(G,with_labels=True)
+plt.show()
+---------------------------------------
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node(34)
+G.add_node(90)
+H = nx.path_graph(5)
+G.add_nodes_from(H)
+#print(nx.info(G))
+print(nx.number_of_nodes(G))
+print(nx.number_of_edges(G))
+nx.draw(G,with_labels=True)
+plt.show()
+============================================
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node(1)
+G.add_node(2)
+G.add_node(100)
+G.add_nodes_from([3,5,7,34])
+G.add_edge(1,2)
+G.add_edge(2,100)
+G.add_edge(100,3)
+G.add_edge(20,40)
+nx.draw(G,with_labels=True)
+plt.show()
+=======================================================
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node(1)
+G.add_node(2)
+G.add_node(100)
+G.add_nodes_from([3,5,7,34])
+G.add_edge(1,2)
+G.add_edge(2,100)
+G.add_edge(100,3)
+G.add_edge(20,40)
+e1=(20,100)
+G.add_edge(*e1)
+nx.draw(G,with_labels=True)
+plt.show()
+====================================================
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node('Tom')
+G.add_node('Rachel')
+G.add_node("hai")
+H=nx.path_graph(10)
+G.add_edge('Tom','Rachel')
+a=('Tom',"hai")
+G.add_edge(*a)
+G.add_node(H)
+nx.draw(G,with_labels=True)
+plt.show()
+==============================================================
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node(1)
+G.add_node(2)
+G.add_node(3)
+G.add_node(4)
+G.add_node(32)
+G.add_node(33)
+G.add_node(34)
+G.add_node(67)
+G.add_node(55)
+G.add_node(44)
+G.add_edge(34,44)
+nx.draw_circular(G,with_labels=True)
+print(nx.degree(G))
+plt.show()
+=====================================================
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node(1)
+G.add_node(2)
+G.add_node(3)
+G.add_node(4)
+G.add_edges_from([(1,3),(1,2),(1,4),(2,4)])
+nx.draw(G,with_labels=True)
+plt.show()
+=============================================================
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node(1)
+G.add_node(2)
+G.add_node(3)
+G.add_node(4)
+G.add_edges_from([(1,3),(1,2),(1,4),(2,4)])
+#G.remove_node(4)
+#G.remove_edge(1,3)
+#G.clear()
+nx.draw(G,with_labels=True)
+plt.show()
+
+----------------------------------------------------------------
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node(1)
+G.add_node(2)
+G.add_node(3)
+G.add_node(4)
+print(G.number_of_nodes())
+print(G.number_of_edges())
+nx.draw(G,with_labels=True)
+plt.show()
+
+======================================================================
+import networkx as nx
+import matplotlib.pyplot as plt
+
+G=nx.read_gml("D://football.gml")
+print(nx.info(G))
+nx.draw(G,with_labels=True)
+plt.show()
+======================================
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node(1)
+G.add_node(2)
+G.add_node(3)
+G.add_node(4)
+G.add_node("Niit")
+G.add_nodes_from("Niit")
+nx.draw(G,with_labels=True)
+plt.show()
+====================================================
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node(1)
+G.add_node(2)
+G.add_node(3)
+G.add_node(4)
+G.add_node("Niit")
+G.add_nodes_from("Niit")
+G.add_edge(3,"Niit")
+print(list(G.nodes))
+print(list(G.edges))
+print(list(G.adj[3]))  # or list(G.neighbors(1))
+print(G.degree[3])
+nx.draw(G,with_labels=True)
+plt.show()
+====================================================
+import networkx as nx
+import matplotlib.pyplot as plt
+G=nx.Graph()
+G.add_node(1)
+G.add_node(2)
+G.add_node(3)
+G.add_node(4)
+G.add_node("Niit")
+G.add_nodes_from("Niit")
+G.add_edge(3,"Niit")
+G.remove_node(2)
+G.remove_nodes_from("Niit")
+list(G.nodes)
+G.remove_edge(3,"Niit")
+nx.draw(G,with_labels=True)
+plt.show()
+============================================================
+import networkx as nx
+import matplotlib.pyplot as plt
+G = nx.Graph(day="Friday")
+G.add_node(1, time='5pm')
+G.add_nodes_from([3], time='2pm')
+G.nodes[1]
+G.nodes[1]['room'] = 714
+print(G.nodes.data())
+
+nx.draw(G,with_labels=True)
+plt.show()
+=========================================================
+import networkx as nx
+import networkx.algorithms as alg
+import numpy as np
+import matplotlib.pyplot as plt
+
+# create graph object
+twitter = nx.Graph()
+
+# add users
+twitter.add_node('Tom', age= 34)
+twitter.add_node('Rachel', age= 33)
+twitter.add_node('Skye', age= 29)
+twitter.add_node('Bob', age= 45)
+twitter.add_node('Mike', age= 23)
+twitter.add_node('Peter', age= 46)
+twitter.add_node('Matt', age= 58)
+twitter.add_node('Lester', age=65)
+twitter.add_node('Jack', age= 32)
+twitter.add_node('Max', age=75)
+twitter.add_node('Linda', age= 23)
+twitter.add_node('Rory', age=18)
+twitter.add_node('Richard', age= 24)
+twitter.add_node('Jackie', age= 25)
+twitter.add_node('Alex', age= 24)
+twitter.add_node('Bart', age= 33)
+twitter.add_node('Greg', age= 45)
+twitter.add_node('Rob', age=19)
+twitter.add_node('Markus', age= 21)
+twitter.add_node('Glenn', age= 24)
+
+# add posts
+twitter.node['Rory']['posts'] = 182
+twitter.node['Rob']['posts'] = 111
+twitter.node['Markus']['posts'] = 159
+twitter.node['Linda']['posts'] = 128
+twitter.node['Mike']['posts'] = 289
+twitter.node['Alex']['posts'] = 188
+twitter.node['Glenn']['posts'] = 252
+twitter.node['Richard']['posts'] = 106
+twitter.node['Jackie']['posts'] = 138
+twitter.node['Skye']['posts'] = 78
+twitter.node['Jack']['posts'] = 62
+twitter.node['Bart']['posts'] = 38
+twitter.node['Rachel']['posts'] = 89
+twitter.node['Tom']['posts'] = 23
+twitter.node['Bob']['posts'] = 21
+twitter.node['Greg']['posts'] = 41
+twitter.node['Peter']['posts'] = 64
+twitter.node['Matt']['posts'] = 8
+twitter.node['Lester']['posts'] = 4
+twitter.node['Max']['posts'] = 2
+
+# add followers
+twitter.add_edge('Rob', 'Rory',Weight=1)
+twitter.add_edge('Markus', 'Rory', Weight= 1)
+twitter.add_edge('Markus', 'Rob', Weight =5)
+twitter.add_edge('Mike', 'Rory', Weigh= 1)
+twitter.add_edge('Mike', 'Rob', Weight= 1)
+twitter.add_edge('Mike', 'Markus', Weight= 1)
+twitter.add_edge('Mike', 'Linda', Weight= 5)
+twitter.add_edge('Alex', 'Rob', Weight= 1)
+twitter.add_edge('Alex', 'Markus', Weight= 1)
+twitter.add_edge('Alex', 'Mike', Weight= 1)
+twitter.add_edge('Glenn', 'Rory', Weight= 1)
+twitter.add_edge('Glenn', 'Rob', Weight= 1)
+twitter.add_edge('Glenn', 'Markus', Weight= 1)
+twitter.add_edge('Glenn', 'Linda', Weight= 2)
+twitter.add_edge('Glenn', 'Mike', Weight= 1)
+twitter.add_edge('Glenn', 'Alex', Weight= 1)
+twitter.add_edge('Richard', 'Rob', Weight= 1)
+twitter.add_edge('Richard', 'Linda', Weight= 1)
+twitter.add_edge('Richard', 'Mike', Weight= 1)
+twitter.add_edge('Richard', 'Alex', Weight= 1)
+twitter.add_edge('Richard', 'Glenn', Weight= 1)
+twitter.add_edge('Jackie', 'Linda', Weight= 1)
+twitter.add_edge('Jackie', 'Mike', Weight= 1)
+twitter.add_edge('Jackie', 'Glenn', Weight= 1)
+twitter.add_edge('Jackie', 'Skye', Weight= 1)
+twitter.add_edge('Tom', 'Rachel', Weight= 5)
+twitter.add_edge('Rachel', 'Bart', Weight= 1)
+twitter.add_edge('Tom', 'Bart', Weight= 2)
+twitter.add_edge('Jack', 'Skye', Weight= 1)
+twitter.add_edge('Bart', 'Skye', Weight= 1)
+twitter.add_edge('Rachel', 'Skye', Weight= 1)
+twitter.add_edge('Greg', 'Bob', Weight= 1)
+twitter.add_edge('Peter', 'Greg', Weight= 1)
+twitter.add_edge('Lester', 'Matt', Weight= 1)
+twitter.add_edge('Max', 'Matt', Weight= 1)
+twitter.add_edge('Rachel', 'Linda', Weight= 1)
+twitter.add_edge('Tom', 'Linda', Weight= 1)
+twitter.add_edge('Bart', 'Greg', Weight= 2)
+twitter.add_edge('Tom', 'Greg', Weight= 2)
+twitter.add_edge('Peter', 'Lester', Weight= 2)
+twitter.add_edge('Tom', 'Mike', Weight= 1)
+twitter.add_edge('Rachel', 'Mike', Weight= 1)
+twitter.add_edge('Rachel', 'Glenn', Weight= 1)
+twitter.add_edge('Lester', 'Max', Weight= 1)
+twitter.add_edge('Matt', 'Peter', Weight= 1)
+
+# add relationship
+twitter['Rob']['Rory']['relationship'] = 'friend'
+twitter['Markus']['Rory']['relationship'] = 'friend'
+twitter['Markus']['Rob']['relationship'] = 'spouse'
+twitter['Mike']['Rory']['relationship'] = 'friend'
+twitter['Mike']['Rob']['relationship'] = 'friend'
+twitter['Mike']['Markus']['relationship'] = 'friend'
+twitter['Mike']['Linda']['relationship'] = 'spouse'
+twitter['Alex']['Rob']['relationship'] = 'friend'
+twitter['Alex']['Markus']['relationship'] = 'friend'
+twitter['Alex']['Mike']['relationship'] = 'friend'
+twitter['Glenn']['Rory']['relationship'] = 'friend'
+twitter['Glenn']['Rob']['relationship'] = 'friend'
+twitter['Glenn']['Markus']['relationship'] = 'friend'
+twitter['Glenn']['Linda']['relationship'] = 'sibling'
+twitter['Glenn']['Mike']['relationship'] = 'friend'
+twitter['Glenn']['Alex']['relationship'] = 'friend'
+twitter['Richard']['Rob']['relationship'] = 'friend'
+twitter['Richard']['Linda']['relationship'] = 'friend'
+twitter['Richard']['Mike']['relationship'] = 'friend'
+twitter['Richard']['Alex']['relationship'] = 'friend'
+twitter['Richard']['Glenn']['relationship'] = 'friend'
+twitter['Jackie']['Linda']['relationship'] = 'friend'
+twitter['Jackie']['Mike']['relationship'] = 'friend'
+twitter['Jackie']['Glenn']['relationship'] = 'friend'
+twitter['Jackie']['Skye']['relationship'] = 'friend'
+twitter['Tom']['Rachel']['relationship'] = 'spouse'
+twitter['Rachel']['Bart']['relationship'] = 'friend'
+twitter['Tom']['Bart']['relationship'] = 'sibling'
+twitter['Jack']['Skye']['relationship'] = 'friend'
+twitter['Bart']['Skye']['relationship'] = 'friend'
+twitter['Rachel']['Skye']['relationship'] = 'friend'
+twitter['Greg']['Bob']['relationship'] = 'friend'
+twitter['Peter']['Greg']['relationship'] = 'friend'
+twitter['Lester']['Matt']['relationship'] = 'friend'
+twitter['Max']['Matt']['relationship'] = 'friend'
+twitter['Rachel']['Linda']['relationship'] = 'friend'
+twitter['Tom']['Linda']['relationship'] = 'friend'
+twitter['Bart']['Greg']['relationship'] = 'sibling'
+twitter['Tom']['Greg']['relationship'] = 'sibling'
+twitter['Peter']['Lester']['relationship'] = 'generation'
+twitter['Tom']['Mike']['relationship'] = 'friend'
+twitter['Rachel']['Mike']['relationship'] = 'friend'
+twitter['Rachel']['Glenn']['relationship'] = 'friend'
+twitter['Lester']['Max']['relationship'] = 'friend'
+twitter['Matt']['Peter']['relationship'] = 'friend'
+
+# print nodes
+print('\nJust nodes: ', twitter.nodes())
+print('\nNodes with data: ', twitter.nodes(data=True))
+
+# print edges
+print('\nEdges with data: ', twitter.edges(data=True))
+
+# graph's density and centrality
+print('\nDensity of the graph: ', nx.density(twitter))
+
+centrality = sorted(
+    alg.centrality.degree_centrality(twitter).items(),
+    key=lambda e: e[1], reverse=True)
+print('\nCentrality of nodes: ', centrality)
+
+average_degree = sorted(
+    alg.assortativity.average_neighbor_degree(twitter)\
+    .items(), key=lambda e: e[1], reverse=True)
+
+print('\nAverage degree: ', average_degree)
+
+print(len(twitter['Glenn']) / 19)
+
+# draw the graph
+nx.draw_networkx(twitter)
+plt.show()
+#plt.savefig('../../Data/Chapter08/twitter_networkx.png')
+
+# save graph
+#nx.write_graphml(twitter,
+  #  '../../Data/Chapter08/twitter.graphml')
+===================================================================
